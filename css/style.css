@@ -645,7 +645,7 @@ body {
   margin: 50px auto;
 }
 .gtco-logo-area .col .img-fluid {
-  max-height: 32px;
+  max-height: 50px;
 }
 @media (max-width: 600px) {
   .gtco-logo-area .col {
