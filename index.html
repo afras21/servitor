@@ -24,6 +24,7 @@
             font-size: 15px
         }
     </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -35,11 +36,11 @@
                 class="bar1"></span> <span class="bar2"></span> <span class="bar3"></span></button>
             <div id="my-nav" class="collapse navbar-collapse">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#news">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#recognition">Recognition</a></li>
+                    <li class="nav-item"><a class="nav-link navmenu_color" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link navmenu_color" href="#news">Services</a></li>
+                    <li class="nav-item"><a class="nav-link navmenu_color" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link navmenu_color" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link navmenu_color" href="#recognition">Recognition</a></li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <a href="http://merchant.servitor.in/" class="btn btn-outline-dark my-2 my-sm-0 mr-3 text-uppercase">login</a>
@@ -488,7 +489,7 @@
 </div> -->
 
     <!-- Recognition -->
-    <div class="container-fluid gtco-testimonials view_option1" id="news">
+    <div class="container-fluid gtco-testimonials view_option1 " id="recognition">
         <div class="container">
             <h2>Recognition</h2>
             <div class="row offset-md-1 offset-2">
@@ -503,7 +504,7 @@
         </div>
     </div>
 
-    <div class="container-fluid gtco-testimonials view_option2" id="news">
+    <div class="container-fluid gtco-testimonials view_option2" id="recognition">
         <div class="container">
             <h2>Recognition</h2>
             <div class="owl-carousel owl-carousel2 owl-theme">
@@ -541,11 +542,11 @@
                 <div class="col-lg-12" id="contact">
                     <h4> Contact Us </h4>
                     <!-- To validate the form we need used the validate.js file -->
-                    <form id="form_data">
-                        <input type="text" class="form-control" placeholder="Full Name" id="name">
-                        <input type="email" class="form-control" placeholder="Email Address" id="email">
-                        <textarea class="form-control" placeholder="Message" id="message"></textarea>
-                        <button class="submit-button" type="submit">Submit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </button>
+                    <form id="form_data" method="post" action="http://inspier.in/mailgun/index.php">
+                        <input type="text" class="form-control" placeholder="Full Name" id="name" name="name" required>
+                        <input type="email" class="form-control" placeholder="Email Address" id="email" name="email" required>
+                        <textarea class="form-control" placeholder="Message" id="message" name="message" required></textarea>
+                        <button class="submit-button" onclick="sendmail()" name="send" type="submit">Submit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </button>
                     </form>
                 </div>
 
@@ -611,13 +612,40 @@
     </script>
 
     <!-- including the validating script for the submitting from -->
-    <script src="./js/validate.js"></script>
+    <!-- <script src="./js/validate.js"></script> -->
+    <script src="./js/jquery.min.js"></script>
 
 </body>
+<!-- script for the jquery opertaions -->
+
+<!-- <script type="text/javascript">
+    function sendmail() {
+        var name = $('#name').val();
+        var email = $('#email').val();
+        var message = $('#message').val();
+
+        $.ajax({
+            url: "http://inspier.in/email_sender/send_mail.php",
+            type: "post",
+            data: {
+                name: name,
+                email: email,
+                message: message
+            },
+            success: function(data, status) {
+                // var conf = confirm("Mail Successfully Sent ...!");
+            }
+        });
+
+    }
+</script> -->
 
 </html>
 
 
 
 
-<!-- owl-carousel owl-carousel2 owl-theme owl-loaded owl-drag -->
+<!-- owl-carousel owl-carousel2 owl-theme owl-loaded owl-drag
+
+            url: "http://inspier.in/mail/index.php",
+-->

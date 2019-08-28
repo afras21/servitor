@@ -120,6 +120,13 @@
                             text-transform: uppercase;
                         }
                         
+                        li a:hover {
+                            color: #ffffff;
+                            background-color: #5EE0FA;
+                            border-radius: 30px;
+                            text-decoration-color: white;
+                        }
+                        
                         #gtco-main-nav form a {
                             font-family: "OpenSans-Semibold";
                             font-size: 18px;
@@ -946,7 +953,7 @@
                                 padding: 5px 15px !important;
                                 text-transform: uppercase;
                             }
-                            #gtco-main-nav .navbar-nav li a:hover {
+                            li .navmenu_color:hover {
                                 background-color: #01e6f8;
                             }
                         }
@@ -977,7 +984,7 @@
                                 padding: 5px 15px !important;
                                 text-transform: uppercase;
                             }
-                            #gtco-main-nav .navbar-nav li a:hover {
+                            li .navmenu_color:hover {
                                 background-color: #01e6f8;
                             }
                         }
